@@ -1,0 +1,163 @@
+/* sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: #0A0617;
+    padding: 20px 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    display: none; /* ซ่อนปุ่มนี้ในหน้าจอปกติ */
+}
+
+/* แสดงปุ่มเมื่อหน้าจอมีขนาดเล็ก */
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+    }
+}
+
+.profile {
+    padding: 0 20px 30px 20px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.profile-info ion-icon {
+    font-size: 2rem;
+}
+
+.profile span {
+    font-size: 1.2rem;
+    color: #8f99cc;
+    text-transform: uppercase;
+}
+
+.content-heading {
+    color: #8f99cc;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+    padding: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    padding-left: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-list li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-list li a ion-icon {
+    font-size: 1.5rem;
+}
+
+.nav-list li a p {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.nav-list li:hover a {
+    color: #ff00ff;
+}
+
+.switch-theme {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+/* ปุ่ม toggle-switch */
+.toggle-switch {
+  width: 50px;
+  height: 24px;
+  background-color: #666;
+  border-radius: 999px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  padding: 2px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch .circle {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+/* เมื่อเปิด dark mode */
+.switch-theme.active .toggle-switch {
+  background-color: #32206d; /* สีพื้นหลังเปลี่ยนเมื่อเปิด */
+}
+
+.switch-theme.active .circle {
+  left: 28px; /* เลื่อนวงกลมไปด้านขวา */
+  background-color: #fff;
+}
+
+.toggle-button {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.toggle-button.right {
+  left: auto;
+  right: 20px;
+}
