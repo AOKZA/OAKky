@@ -1,0 +1,137 @@
+/* hero.css */
+.youtube-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* ใช้ min-height แทน height เพื่อให้เนื้อหาปรับตามได้ */
+    padding: 80px 20px; /* เพิ่ม padding ด้านบนและล่าง */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: #0a0617; /* สีพื้นหลังเหมือนกับส่วนอื่นๆ */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px; /* เพิ่ม max-width ให้ข้อความดูดีขึ้น */
+    margin-bottom: 50px; /* เพิ่มระยะห่างระหว่างข้อความกับวิดีโอ */
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 3.8rem; /* เพิ่มขนาดตัวอักษร */
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff; /* เปลี่ยนสีเป็นขาวเพื่อให้ตัดกับพื้นหลัง */
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #ccc; /* ปรับสีให้ดูซอฟต์ลง */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่เมื่อหน้าจอเล็ก */
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 35px; /* ปรับขนาดปุ่ม */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    min-width: 180px; /* กำหนดความกว้างขั้นต่ำของปุ่ม */
+}
+
+.hero-button.primary {
+    background-color: #007aff;
+    color: #fff;
+    border: 1px solid #007aff;
+}
+
+.hero-button.primary:hover {
+    background-color: #005bb5;
+    border-color: #005bb5;
+}
+
+.hero-button.secondary {
+    background-color: transparent;
+    color: #57C4E5; /* ใช้สีฟ้าของธีม */
+    border: 1px solid #57C4E5;
+}
+
+.hero-button.secondary:hover {
+    background-color: #57C4E5;
+    color: #0a0617; /* เปลี่ยนสีข้อความเป็นสีเข้ม */
+}
+
+.video-display {
+    position: relative;
+    width: 80%; /* กำหนดความกว้างของวิดีโอ */
+    max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+    padding-bottom: 45%; /* อัตราส่วน 16:9 สำหรับวิดีโอ */
+    height: 0;
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    margin-top: 30px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.video-display iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .video-display {
+        width: 90%;
+        padding-bottom: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .youtube-hero {
+        padding: 60px 15px;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-button {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    .video-display {
+        width: 100%;
+        padding-bottom: 56.25%; /* อัตราส่วน 16:9 สำหรับวิดีโอเต็มความกว้าง */
+    }
+}
