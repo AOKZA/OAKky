@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OAK - About</title>
+    <link rel="stylesheet" href="screensize.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle-button">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-info">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <span>Analytics</span>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><p data-i18n="nav-home">Home</p></a></li>
+            <li><a href="mods.html"><ion-icon name="apps-outline"></ion-icon><p data-i18n="nav-mods">MODS</p></a></li>
+            <li><a href="about.html"><ion-icon name="information-circle-outline"></ion-icon><p data-i18n="nav-about">About</p></a></li>
+            <div class="divider"></div>
+            <li><a href="#"><ion-icon name="settings-outline"></ion-icon><p data-i18n="custom-heading">Custom</p></a></li>
+        </ul>
+        <div class="bottom-list">
+            <div class="switch-theme" id="darkModeToggle">
+                <ion-icon name="moon-outline"></ion-icon>
+                <p data-i18n="dark-mode">Dark Mode</p>
+            </div>
+            <div class="language-switcher">
+                <p data-i18n="language-label">Language</p>
+                <button class="lang-button active" data-lang="th">TH</button>
+                <button class="lang-button" data-lang="en">EN</button>
+            </div>
+            <div class="logout">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <p data-i18n="logout">Logout</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+           <section class="about-section">
+    <div class="about-container">
+        <h1 data-i18n="about-me-title">เกี่ยวกับฉัน</h1>
+        <p data-i18n="about-me-summary-th">สวัสดีครับ ผมชื่อ OAKZA AZ ผมเป็นครีเอเตอร์</p>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3 data-i18n="main-work-title-th">🔧 งานหลักไม่รู้จะเรียกอะไรดี... แต่รู้ว่า ผมทำสิ่งที่รัก</h3>
+                <p data-i18n="main-work-details-th">
+                    🎥 ยูทูปเบอร์ – ตัดต่อเอง อัดเสียงเอง ทำทุกอย่างเอง<br>
+                    🧑‍💻 นักพัฒนาเว็บไซต์ – จากแค่แก้โค้ดเล่น ๆ ตอนกลางคืน กลายมาเป็นคนสร้างเว็บจริง<br>
+                    🎮 เกมเมอร์นิด ๆ – บางคลิปคือเกม บางคลิปคือสาระ บางคลิปคือ...แค่บ่น<br>
+                    📷 ครีเอเตอร์ – ภาพ เสียง คำพูด ดนตรี ผมใช้ทุกอย่างเพื่อสื่อ "ตัวตน" ของผม
+                </p>
+            </div>
+            <div class="about-card">
+                <h3 data-i18n="motivation-title-th">💡 ทำไมถึงยังทำอยู่?</h3>
+                <p data-i18n="motivation-details-th">ผมไม่ได้มีเป้าหมายจะดังระดับโลก แค่มีคนดูแล้วได้อะไรบางอย่างจากผม… นั่นแหละ คือพอแล้ว</p>
+            </div>
+        </div>
+    </div>
+</section>
+        </main>
+        
+        <footer class="main-footer">
+            <div class="footer-section">
+                <div class="footer-text">
+                    <p data-i18n="footer-follow">Follow the work at.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/oakza.az" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright-section">
+                <p data-i18n="footer-copyright">All rights reserved © 2025 OAK</p>
+                <p data-i18n="footer-madeby">Made by Taylor Brooks</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
