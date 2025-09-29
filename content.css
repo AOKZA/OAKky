@@ -1,0 +1,210 @@
+/* content.css */
+
+/* --- Mods/Donate Styles (เดิม) --- */
+.mods-section {
+    background: linear-gradient(180deg, #1f1347 0%, #0a0617 100%);
+    color: white;
+    padding: 100px 20px;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ... (โค้ด .mods-container, .mod-list, .mod-item และอื่นๆ สำหรับหน้า MODS/Donate) ... */
+.mods-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.mods-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #57C4E5;
+    text-shadow: 0 0 10px rgba(87, 196, 229, 0.5);
+}
+
+.mods-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+/* (โค้ด .mod-list, .mod-item, .download-button ที่เหลือ) */
+.mod-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+.mod-item {
+    display: flex;
+    align-items: center;
+    background-color: #1f2025;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mod-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+/* ... โค้ดที่เหลือของ mods.css ... */
+.download-button {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #007aff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #005bb5;
+}
+
+/* --- About Page Styles (ใหม่, จาก about.css) --- */
+.about-section {
+    width: 100%;
+    background-color: #0A0617;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: calc(100vh - 100px);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #57C4E5;
+    text-shadow: 0 0 10px rgba(87, 196, 229, 0.5);
+}
+
+.about-container > p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+    color: #ccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about-card {
+    background-color: #1f2025;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.about-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #bbb;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+    .about-container > p {
+        font-size: 1rem;
+    }
+}
+/* content.css (เพิ่มโค้ด Responsive ที่ส่วนท้าย) */
+
+/* ... (โค้ด MODS, Donate, และ About ที่มีอยู่เดิม) ... */
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    
+    /* MODS / DONATE Sections */
+    .mods-container h1 {
+        font-size: 2.5rem;
+    }
+    .mods-container p {
+        font-size: 1rem;
+    }
+    
+    /* Mod Item & Donate Item list */
+    .mod-item {
+        flex-direction: column; /* เรียงรูปภาพและรายละเอียดในแนวตั้ง */
+        text-align: center;
+        padding: 20px;
+    }
+    .mod-image-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 80px;
+        height: 80px;
+    }
+    .mod-details {
+        text-align: center;
+    }
+    .mod-details h2 {
+        font-size: 1.4rem;
+    }
+    .mod-actions {
+        margin-top: 20px;
+    }
+
+    /* ABOUT Section */
+    .about-section {
+        padding: 80px 10px;
+    }
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+    .about-container > p {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .about-grid {
+        grid-template-columns: 1fr; /* ให้ Card เรียงซ้อนกันเป็นแถวเดียว */
+        padding: 0 10px;
+        gap: 30px;
+    }
+    .about-card {
+        padding: 30px;
+    }
+    .about-card h3 {
+        font-size: 1.5rem;
+    }
+}
