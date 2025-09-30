@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OAK - Donate</title> <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="responsive.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle-button">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-info">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <span>Analytics</span>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><p data-i18n="nav-home">Home</p></a></li>
+            <li><a href="mods.html"><ion-icon name="apps-outline"></ion-icon><p data-i18n="nav-mods">MODS</p></a></li>
+            <li><a href="about.html"><ion-icon name="information-circle-outline"></ion-icon><p data-i18n="nav-about">About</p></a></li>
+            <li><a href="donate.html"><ion-icon name="heart-outline"></ion-icon><p data-i18n="nav-donate">Donate</p></a></li>
+            <div class="divider"></div>
+            <li><a href="#"><ion-icon name="settings-outline"></ion-icon><p data-i18n="custom-heading">Custom</p></a></li>
+        </ul>
+        <div class="bottom-list">
+            <div class="switch-theme" id="darkModeToggle">
+                <ion-icon name="moon-outline"></ion-icon>
+                <p data-i18n="dark-mode">Dark Mode</p>
+            </div>
+            <div class="language-switcher">
+                <p data-i18n="language-label">Language</p>
+                <button class="lang-button active" data-lang="th">TH</button>
+                <button class="lang-button" data-lang="en">EN</button>
+            </div>
+            <div class="logout">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <p data-i18n="logout">Logout</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <main class="main-content">
+            <section class="mods-section donate-section"> <div class="mods-container">
+                    <h1 data-i18n="donate-title">Support OAK's Work</h1>
+                    <p data-i18n="donate-subtitle">Your generosity helps keep the content flowing and the projects updated. Thank you!</p>
+                    
+                    <div class="mod-list">
+                        
+                        <div class="mod-item donate-card youtube-card">
+                            <div class="mod-icon-container" style="background-color: #FF0000;">
+                                <i class="fab fa-youtube fa-3x"></i> 
+                            </div>
+                            <div class="mod-details">
+                                <h2 data-i18n="donate-youtube-membership">YouTube Membership</h2>
+                                <p data-i18n="donate-youtube-desc">Join the channel membership for exclusive perks and to directly support the creator!</p>
+                                <a href="https://www.youtube.com/channel/UC-kXsjkm685oq0xUiGnlh4Q/join" target="_blank" class="download-button" style="background-color: #FF0000; margin-top: 15px;">
+                                    <span data-i18n="donate-button-join">Join Membership</span>
+                                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mod-item donate-card tipme-card">
+                            <div class="mod-icon-container" style="background-color: #57C4E5;">
+                                <i class="fas fa-hand-holding-heart fa-3x"></i> 
+                            </div>
+                            <div class="mod-details">
+                                <h2 data-i18n="donate-tipme">TipMe (Direct Donation)</h2>
+                                <p data-i18n="donate-tipme-desc">Send a one-time donation/tip through TipMe platform.</p>
+                                <a href="https://tipme.in.th/oakza-az" target="_blank" class="download-button" style="background-color: #57C4E5; margin-top: 15px;">
+                                    <span data-i18n="donate-button-tip">Send Tip</span>
+                                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p style="text-align: center; margin-top: 50px; font-size: 1.5rem; color: #57C4E5;" data-i18n="donate-thankyou">Thank you for your kindness and support!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-section">
+                <div class="footer-text">
+                    <p data-i18n="footer-follow">Follow the work at.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/oakza.az" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright-section">
+                <p data-i18n="footer-copyright">All rights reserved © 2025 OAK</p>
+                <p data-i18n="footer-madeby">Made by Taylor Brooks</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

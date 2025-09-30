@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OAK - About</title>
+    <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="responsive.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle-button">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-info">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <span>Analytics</span>
+        </div>
+
+        <ul class="nav-list">
+            <li>
+                <a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <p data-i18n="nav-home">หน้าหลัก</p>
+                </a>
+            </li>
+            <li>
+                <a href="mods.html">
+                    <ion-icon name="game-controller-outline"></ion-icon>
+                    <p data-i18n="nav-mods">MODS</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="about.html">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    <p data-i18n="nav-about">เกี่ยวกับ</p>
+                </a>
+            </li>
+            <li>
+                <a href="donate.html">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <p data-i18n="nav-donate">โดเนท</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="bottom-list">
+            <p class="heading" data-i18n="custom-heading">ตั้งค่า</p>
+            
+            <div class="switch-theme" id="darkModeToggle">
+                <ion-icon name="moon-outline"></ion-icon>
+                <p data-i18n="dark-mode">โหมดมืด</p>
+            </div>
+            
+            <p class="heading" data-i18n="language-label">ภาษา</p>
+            <div class="language-switcher">
+                <button class="lang-button active" data-lang="th">TH</button>
+                <button class="lang-button" data-lang="en">EN</button>
+            </div>
+
+            <div class="logout">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <p data-i18n="logout">ออกจากระบบ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <main class="main-content">
+            <section class="about-section">
+                <div class="about-container">
+                    <h1 data-i18n="about-title">About OAKZA AZ.</h1>
+                    <p data-i18n="about-description">สวัสดีครับ ผม OAK เป็นผู้สร้างเนื้อหาที่เน้นการทำ Mod เกม, วิดีโอสอน, และการสตรีมมิ่ง เว็บไซต์นี้เป็นศูนย์รวมของโปรเจกต์สร้างสรรค์และชุมชนของผมครับ</p>
+                    
+                    <div class="about-grid">
+                        
+                        <div class="about-card">
+                            <h3 data-i18n="about-oak-title">เกี่ยวกับ OAK</h3>
+                            <p data-i18n="about-oak-details">ผมเป็น Content Creator เน้นการทำคลิปสอน Mod เกม, สอนทำคลิป, และการ Live สด เว็บไซต์นี้เป็นศูนย์รวมของผลงานทั้งหมดของผม</p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3 data-i18n="my-career-title">💼 อาชีพของผม</h3>
+                            <p data-i18n="my-career-details">การทำคลิปวิดีโอคือส่วนหนึ่งของการทำงานของผม ผมมีเป้าหมายในการสร้างสรรค์วิดีโอคุณภาพสูงและแบ่งปันความรู้กับผู้คน</p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3 data-i18n="motivation-title">💡 ทำไมถึงยังทำอยู่?</h3>
+                            <p data-i18n="motivation-details">ผมไม่ได้มีเป้าหมายจะดังระดับโลก แค่มีคนดูแล้วได้อะไรบางอย่างจากผม… นั่นแหละ คือพอแล้ว</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-section">
+                <div class="footer-text">
+                    <p data-i18n="footer-follow">Follow the work at.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/oakza.az" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright-section">
+                <p data-i18n="footer-copyright">All rights reserved © 2025 OAK</p>
+                <p data-i18n="footer-madeby">Made by Taylor Brooks</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

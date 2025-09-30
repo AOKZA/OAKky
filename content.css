@@ -1,0 +1,298 @@
+/* content.css */
+
+/* --- Mods/Donate Styles (เดิม) --- */
+.mods-section {
+    background: linear-gradient(180deg, #1f1347 0%, #0a0617 100%);
+    color: white;
+    padding: 100px 20px;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ... (โค้ด .mods-container, .mod-list, .mod-item และอื่นๆ สำหรับหน้า MODS/Donate) ... */
+.mods-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.mods-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #57C4E5;
+    text-shadow: 0 0 10px rgba(87, 196, 229, 0.5);
+}
+
+.mods-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+/* (โค้ด .mod-list, .mod-item, .download-button ที่เหลือ) */
+.mod-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+.mod-item {
+    display: flex;
+    align-items: center;
+    background-color: #1f2025;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mod-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+/* ... โค้ดที่เหลือของ mods.css ... */
+.download-button {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #007aff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #005bb5;
+}
+
+/* --- About Page Styles (ใหม่, จาก about.css) --- */
+.about-section {
+    width: 100%;
+    background-color: #0A0617;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: calc(100vh - 100px);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #57C4E5;
+    text-shadow: 0 0 10px rgba(87, 196, 229, 0.5);
+}
+
+.about-container > p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+    color: #ccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about-card {
+    background-color: #1f2025;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.about-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #bbb;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+    .about-container > p {
+        font-size: 1rem;
+    }
+}
+/* content.css (ส่วนที่ไม่ใช่ Media Query) */
+
+/* ... (โค้ด .mods-section, .mods-container, .mod-list, .mod-item ที่มีอยู่เดิม) ... */
+
+.mod-image-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden; /* **สำคัญ:** ซ่อนส่วนที่เกินขอบเขต */
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+/* **โค้ดแก้ไขหลักสำหรับภาพ** */
+.mod-image-container img {
+    width: 100%; /* ทำให้ภาพกว้างเต็มคอนเทนเนอร์ */
+    height: 100%; /* ทำให้ภาพสูงเต็มคอนเทนเนอร์ */
+    object-fit: cover; /* **สำคัญ:** ให้ภาพครอบคลุมพื้นที่โดยไม่หลุดกรอบ */
+    transition: transform 0.3s ease;
+}
+/* **แทนที่ .mod-image ด้วย .mod-image-container img หากคุณใช้แท็ก <img> โดยตรง** */
+/* หากคุณเคยมี .mod-image อยู่แล้ว (แบบที่ผมเข้าใจในตอนแรก) ก็ใช้ .mod-image เหมือนเดิม */
+/* ถ้าโครงสร้าง HTML เป็น: <div class="mod-image-container"><img class="mod-image" src="..."></div> ให้ใช้ .mod-image */
+/* แต่ถ้าไม่มี class="mod-image" ให้ใช้ .mod-image-container img ตามที่แนะนำ */
+/* **FILE: content.css** (โค้ดใหม่หรือแทนที่โค้ดเดิมในส่วน MODS/DONATE) */
+
+/* --- Mods/Donate Styles (ปรับปรุงเพื่อหน้า Donate) --- */
+
+/* ส่วนหลักของหน้า Donate/Mods */
+.mods-section, .donate-section { 
+    background: linear-gradient(180deg, #1f1347 0%, #0a0617 100%);
+    color: white;
+    padding: 100px 20px;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container ของรายการ */
+.mods-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.mods-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #57C4E5;
+    text-shadow: 0 0 10px rgba(87, 196, 229, 0.5);
+}
+
+.mods-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.mod-list {
+    display: flex;
+    flex-direction: column; /* จัดรายการเป็นคอลัมน์ */
+    gap: 30px; /* ระยะห่างระหว่างบัตร */
+    width: 100%;
+}
+
+/* สไตล์ของบัตร Donate/Mod แต่ละรายการ */
+.mod-item {
+    display: flex;
+    align-items: center;
+    background-color: #1f2025; /* สีพื้นหลังเข้มกว่าเดิมเล็กน้อย */
+    padding: 30px; 
+    border-radius: 20px; /* โค้งมนมากขึ้น */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ดูมีมิติ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 1px solid transparent; /* เส้นขอบเริ่มต้น */
+}
+
+/* Hover Effect: ยกขึ้นและมีขอบสีฟ้า */
+.mod-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+    border: 1px solid #57C4E5; 
+}
+
+/* Icon Container (ใหม่) */
+.mod-icon-container {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; /* วงกลม */
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.mod-icon-container i {
+    color: #fff; /* สีไอคอนเป็นสีขาว */
+}
+
+.mod-details {
+    flex-grow: 1; 
+    text-align: left; /* จัดข้อความชิดซ้าย */
+}
+
+.mod-item h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.mod-item p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 0;
+}
+
+/* ปรับปุ่ม Download/Join/Tip ให้ดูดีขึ้น */
+.download-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* จัดไอคอนไปด้านขวา */
+    text-decoration: none;
+    color: white;
+    padding: 12px 25px; 
+    border-radius: 50px; /* โค้งมนแบบ Pill Shape */
+    font-weight: 600;
+    width: 250px; /* จำกัดความกว้างปุ่ม */
+    text-align: center;
+    transition: filter 0.3s ease;
+}
+
+.download-button:hover {
+    filter: brightness(1.15); /* ทำให้สว่างขึ้นเมื่อโฮเวอร์ */
+}
+
+.download-button span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* ... (โค้ดสำหรับ About Section ที่อยู่ด้านล่างของไฟล์ content.css ไม่จำเป็นต้องเปลี่ยน) ... */

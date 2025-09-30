@@ -1,0 +1,241 @@
+/* responsive.css */
+
+/*
+   โค้ด CSS สำหรับ Responsive Design
+   - max-width: 768px: สำหรับแท็บเล็ตและอุปกรณ์ขนาดเล็ก
+   - max-width: 600px: สำหรับโทรศัพท์มือถือ
+*/
+
+/* ---------------------------------------------------- */
+/* --- 1. Global & Sidebar Layout (max-width: 768px) --- */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Main Content Shift for Sidebar */
+    /* ทำให้เนื้อหาหลักเลื่อนไปทางขวาเมื่อ Sidebar ถูกเปิด */
+    .sidebar.active ~ .container {
+        transform: translateX(250px);
+        transition: transform 0.3s ease;
+    }
+    
+    /* ปรับตำแหน่งปุ่ม Toggle */
+    .toggle-button.right {
+        left: 270px; /* 250px (Sidebar width) + 20px (padding) */
+    }
+    
+    /* เมื่อ Sidebar เปิด (active) ให้มันเลื่อนเข้ามา */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* ----------------------------------------------- */
+    /* --- 2. Home Page (Hero & Card) Adjustments --- */
+    /* ----------------------------------------------- */
+    
+    /* Hero Section (ปรับขนาดตัวอักษรสำหรับแท็บเล็ต) */
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .video-display {
+        width: 90%; /* ขยายวิดีโอให้เต็มจอมากขึ้น */
+        padding-bottom: 50%; /* ปรับอัตราส่วน 16:9 */
+    }
+    
+    /* Featured Cards */
+    .featured-section {
+        padding: 60px 10px;
+    }
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    .section-header p {
+        font-size: 1rem;
+    }
+    .card-group {
+        flex-direction: column; /* เรียง Card ในแนวตั้ง */
+        align-items: center;
+        gap: 30px;
+    }
+    .card {
+        width: 90%; /* ทำให้ Card กว้างขึ้นบนมือถือ */
+        max-width: 350px;
+        height: 350px; 
+    }
+
+    /* ---------------------------------------------- */
+    /* --- 3. MODS / DONATE / ABOUT Adjustments --- */
+    /* ---------------------------------------------- */
+    .mods-section, .about-section {
+        padding: 80px 10px;
+    }
+    
+    .mods-container h1, .about-container h1 {
+        font-size: 2.5rem;
+    }
+    .mods-container p, .about-container > p {
+        font-size: 1rem;
+    }
+    
+    /* **การปรับปรุงที่สำคัญสำหรับหน้า MODS/DONATE** */
+    /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+    .mod-item, .donate-item {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 25px;
+    }
+    .mod-image-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 90px;
+        height: 90px;
+    }
+    .mod-details {
+        text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    }
+    .mod-actions {
+        margin-top: 20px;
+    }
+
+    /* About Grid */
+    .about-grid {
+        grid-template-columns: 1fr; /* ให้ Card เรียงซ้อนกันเป็นแถวเดียว */
+        padding: 0 10px;
+        gap: 30px;
+    }
+    .about-card {
+        padding: 30px;
+    }
+    .about-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    .main-footer {
+        padding: 30px 15px;
+    }
+    .footer-section, .copyright-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .social-icons {
+        margin-left: 0; 
+        margin-top: 15px;
+    }
+    .social-icons a {
+        margin: 0 10px; 
+    }
+}
+
+/* ------------------------------------------------ */
+/* --- 4. Mobile Specific (max-width: 600px) --- */
+/* ------------------------------------------------ */
+@media (max-width: 600px) {
+    
+    /* Hero Section (มือถือ) */
+    .youtube-hero {
+        padding: 50px 10px;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .hero-button {
+        width: 100%; 
+        padding: 15px;
+    }
+    .video-display {
+        width: 100%; 
+        padding-bottom: 60%;
+        margin-top: 20px;
+    }
+
+    /* Footer Section (มือถือ) */
+    .social-icons {
+        margin-top: 5px;
+    }
+    .copyright-section {
+        font-size: 0.8rem;
+    }
+}
+/* responsive.css */
+
+/* ---------------------------------------------------- */
+/* --- 3. MODS / DONATE / ABOUT Adjustments (แก้ไข) --- */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* ... (โค้ดส่วนอื่น ๆ ที่มีอยู่แล้ว) ... */
+    
+    /* **การปรับปรุงที่สำคัญสำหรับหน้า MODS/DONATE** */
+    .mod-item, .donate-item {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 25px;
+        /* --- เพิ่มโค้ด 2 บรรทัดนี้ --- */
+        width: 100%; /* ทำให้รายการ MOD กว้างเต็มพื้นที่ container */
+        max-width: 400px; /* จำกัดความกว้างสูงสุด (เพื่อไม่ให้กว้างเกินไปบน Tablet) */
+        /* --------------------------- */
+        margin-left: auto; /* จัดกึ่งกลาง */
+        margin-right: auto; /* จัดกึ่งกลาง */
+    }
+
+    /* ... (โค้ดส่วนอื่น ๆ ที่มีอยู่แล้ว) ... */
+}
+
+/* ------------------------------------------------ */
+/* --- 4. Mobile Specific (max-width: 600px) --- */
+/* ------------------------------------------------ */
+@media (max-width: 600px) {
+    /* ... (โค้ดส่วนอื่น ๆ ที่มีอยู่แล้ว) ... */
+    
+    /* ปรับขนาดข้อความและ padding เพื่อให้ดูดีขึ้นบนหน้าจอเล็กมาก */
+    .mod-item {
+        padding: 20px 10px; /* ลด padding ด้านข้าง */
+    }
+
+    /* ... (โค้ดส่วนอื่น ๆ ที่มีอยู่แล้ว) ... */
+}
+/* content.css (ในส่วน Responsive - ควรอยู่ด้านล่างสุดของไฟล์) */
+@media (max-width: 768px) {
+    
+    /* 1. แก้ไขให้รายการ MOD ไม่หลุดกรอบ */
+    .mod-item, .donate-item {
+        flex-direction: column; /* เรียงเป็นแนวตั้ง */
+        align-items: center;
+        text-align: center;
+        padding: 20px; /* ลด Padding เล็กน้อย */
+        width: 100%; /* กว้างเต็มพื้นที่ของ mods-container */
+        max-width: 450px; /* จำกัดความกว้างสูงสุดเพื่อให้ดูดีบนแท็บเล็ต */
+        margin-left: auto; /* จัดกึ่งกลาง */
+        margin-right: auto; /* จัดกึ่งกลาง */
+    }
+
+    /* 2. แก้ไขให้รูปภาพเล็กลงและไม่หลุดกรอบ */
+    .mod-image-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 80px; /* **ปรับขนาดรูปภาพให้เล็กลง** */
+        height: 80px; /* **ปรับขนาดรูปภาพให้เล็กลง** */
+    }
+    
+    /* 3. ยืนยันว่าภาพปรับให้พอดีกับกรอบเล็กแล้ว */
+    .mod-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ยืนยันการครอบคลุม */
+    }
+
+    /* ... (โค้ด Responsive ส่วนอื่น ๆ ที่มีอยู่แล้ว) ... */
+}
