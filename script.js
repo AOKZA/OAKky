@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // โค้ดสำหรับโหลด Ionicons ถูกลบออกเนื่องจากมีการโหลดใน HTML โดยตรงแล้ว (ลดโค้ดที่ไม่จำเป็น)
-    
-    // 3. Language data (Translations)
+    // Language data
     const translations = {
         'en': {
             // Navigation
             'nav-home': 'Home',
             'nav-mods': 'MODS',
             'nav-about': 'About',
-            'nav-donate': 'Donate', 
             'custom-heading': 'Custom',
             'dark-mode': 'Dark Mode',
             'language-label': 'Language',
@@ -34,28 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'mod-name-another': 'Another Awesome Mod',
             'mod-description-another': 'A new mod that adds cool features to the game. Check it out now!',
             'download-button': 'Download',
-            
-            // Donate page
-            'donate-title': 'Support OAKZA AZ.',
-            'donate-description': 'Your support helps keep the projects going. Support can be made at the links below:',
-            'donate-youtube-membership': 'YouTube Membership',
-            'donate-youtube-desc': 'Join the channel membership for exclusive perks and to directly support the creator!',
-            'donate-button-join': 'Join Membership',
-            'donate-tipme': 'TipMe (Direct Donation)',
-            'donate-tipme-desc': 'Send a one-time donation/tip through TipMe platform.',
-            'donate-button-tip': 'Send Tip',
-            'donate-thankyou': 'Thank you for your kindness and support!',
-            
-            // About page (เพิ่มใหม่)
-            'about-title': 'About OAKZA AZ.',
-            'about-description': "Hello, I'm OAK. I'm a content creator focused on video game modding, tutorials, and streaming. This website serves as a hub for my creative projects and community.",
-            'about-oak-title': 'About OAK',
-            'about-oak-details': "I am a content creator focusing on game modding, tutorials, and streaming. This website is the official hub for all my works, allowing you to easily access mods and support the channel.",
-            'mission-title': 'Our Mission',
-            'mission-details': 'To provide high-quality, creative mods and educational content for the gaming community. We aim to enhance the player experience and foster a friendly, supportive environment.',
-            'motivation-title': 'Motivation',
-            'motivation-details': "I'm not aiming for global fame. Just having people watch and gain something from me... that's enough.",
-            
+            // About page
+
+            'about-me-title': 'About Me',
+        'about-me-summary-th': 'Hello, I\'m Oak, a creator. I am passionate about technology and design. I am a YouTuber and web developer, always creating something new.',
+        'main-work-title-th': '🔧 My Main Work',
+        'main-work-details-th': '🎥 YouTuber – I edit, record, and do everything by myself<br>🧑‍💻 Web Developer – What started as just tinkering with code at night turned into building real websites<br>🎮 Gamer (a little) – Some videos are games, some are informative, and some are... just me rambling<br>📷 Creator – Images, sound, words, music... I use everything to express "who I am"',
+        'motivation-title-th': '💡 My Motivation',
+        'motivation-details-th': 'I\'m not looking for worldwide fame. If someone watches my content and gets some benefit from it... that\'s enough for me.',
+
             // Footer
             'footer-follow': 'Follow the work at.',
             'footer-copyright': 'All rights reserved © 2025 OAK',
@@ -66,98 +49,89 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-home': 'หน้าหลัก',
             'nav-mods': 'MODS',
             'nav-about': 'เกี่ยวกับ',
-            'nav-donate': 'สนับสนุน',
             'custom-heading': 'ตั้งค่า',
             'dark-mode': 'โหมดมืด',
             'language-label': 'ภาษา',
             'logout': 'ออกจากระบบ',
             // Home page
-            'home-hero-title': 'ยินดีต้อนรับสู่เว็บไซต์ของ OAKZA AZ.',
-            'home-hero-subtitle': 'รวบรวมผลงานและช่องทางในการติดตามคลิปต่างๆ สามารถสำรวจคลิปได้ที่',
+            'home-hero-title': 'ยินดีต้อนรับเข้าสู่เว็บไซต์ OAKZA AZ.',
+            'home-hero-subtitle': 'รวบรวมผลงาน และช่องทางการติดตามคลิปต่างๆ สามารถสำรวจคลิปได้ที่',
             'featured-title': 'ผลงานเด่น',
-            'featured-subtitle': 'สำรวจโปรเจ็กต์ล่าสุดของฉัน ที่สร้างขึ้นด้วยความมุ่งมั่นและความแม่นยำ',
+            'featured-subtitle': 'ผลงานล่าสุดของฉันที่สร้างสรรค์ขึ้นด้วยความมุ่งมั่นและความแม่นยำ',
             'project-one-title': 'ดาวน์โหลด MODS',
             'project-one-desc': 'สามารถดาวน์โหลดได้ที่นี่',
-            'project-two-title': 'Facebook',
+            'project-two-title': 'เพจ Facebook',
             'project-two-desc': 'สามารถติดตามผลงานได้ที่นี่',
-            'project-three-title': 'You Tube',
+            'project-three-title': 'ช่อง YouTube',
             'project-three-desc': 'สามารถติดตามผลงานได้ที่นี่',
             'explore-button': 'สำรวจ',
             // Mods page
             'mods-title': 'ดาวน์โหลด MODS',
-            'mods-description': 'ที่นี่คุณสามารถค้นหาผลงานและ Mod ล่าสุดทั้งหมดของฉัน สำรวจรายการและยกระดับประสบการณ์ของคุณ',
+            'mods-description': 'ที่นี่คุณสามารถดาวน์โหลด MODS ทั้งหมดที่ฉันสร้างขึ้นมาได้',
             'mod-name-thai-font': 'Thai_Font',
-            'mod-description-thai-font': 'เวอร์ชัน 1.21.8: Thai_Font เป็น MOD ที่เปลี่ยนฟอนต์ในเกม Minecraft!',
-            'mod-name-another': 'Mod เจ๋งๆ อีกอัน',
-            'mod-description-another': 'Mod ใหม่ที่เพิ่มฟีเจอร์เจ๋งๆ ให้กับเกม ลองดูเลย!',
+            'mod-description-thai-font': 'เวอร์ชั่น 1.21.8: Thai_Font คือ MOD ที่เปลี่ยนฟอนต์ในเกม Minecraft!',
+            'mod-name-another': 'MOD สุดเจ๋งอีกตัว',
+            'mod-description-another': 'MOD ใหม่ที่เพิ่มฟีเจอร์เจ๋งๆ ให้กับเกม ลองดูเลย!',
             'download-button': 'ดาวน์โหลด',
+            // About page
+            
+                   'about-me-title': 'เกี่ยวกับฉัน',
+        'about-me-summary-th': 'สวัสดีครับ ผมชื่อ OAKZA AZ ผมเป็นครีเอเตอร์',
+        'main-work-title-th': '🔧 งานหลักไม่รู้จะเรียกอะไรดี... แต่รู้ว่า ผมทำสิ่งที่รัก',
+        'main-work-details-th': '🎥 ยูทูปเบอร์ – ตัดต่อเอง อัดเสียงเอง ทำทุกอย่างเอง<br>🧑‍💻 นักพัฒนาเว็บไซต์ – จากแค่แก้โค้ดเล่น ๆ ตอนกลางคืน กลายมาเป็นคนสร้างเว็บจริง<br>🎮 เกมเมอร์นิด ๆ – บางคลิปคือเกม บางคลิปคือสาระ บางคลิปคือ...แค่บ่น<br>📷 ครีเอเตอร์ – ภาพ เสียง คำพูด ดนตรี ผมใช้ทุกอย่างเพื่อสื่อ "ตัวตน" ของผม',
+        'motivation-title-th': '💡 ทำไมถึงยังทำอยู่?',
+        'motivation-details-th': 'ผมไม่ได้มีเป้าหมายจะดังระดับโลก แค่มีคนดูแล้วได้อะไรบางอย่างจากผม… นั่นแหละ คือพอแล้ว',
 
-            // Donate page
-            'donate-title': 'สนับสนุน OAKZA AZ.',
-            'donate-description': 'การสนับสนุนของคุณช่วยให้โปรเจ็กต์ดำเนินต่อไปได้ สามารถให้การสนับสนุนได้ตามลิงก์ด้านล่าง:',
-            'donate-youtube-membership': 'สมัครสมาชิก YouTube',
-            'donate-youtube-desc': 'เข้าร่วมเป็นสมาชิกช่องเพื่อรับสิทธิพิเศษและสนับสนุนผู้สร้างโดยตรง!',
-            'donate-button-join': 'เข้าร่วมเป็นสมาชิก',
-            'donate-tipme': 'TipMe (บริจาคโดยตรง)',
-            'donate-tipme-desc': 'ส่งเงินบริจาค/ทิปแบบครั้งเดียวผ่านแพลตฟอร์ม TipMe',
-            'donate-button-tip': 'ส่งทิป',
-            'donate-thankyou': 'ขอบคุณสำหรับน้ำใจและการสนับสนุนของคุณ!',
-            
-            // About page (เพิ่มใหม่)
-            'about-title': 'เกี่ยวกับ OAKZA AZ.',
-            'about-description': "สวัสดีครับ ผมชื่อ OAK ครับ ผมเป็นผู้สร้างเนื้อหาที่เน้นไปที่การสร้างม็อดเกมวิดีโอ, การสอน, และการสตรีมมิ่ง เว็บไซต์นี้ทำหน้าที่เป็นศูนย์กลางสำหรับโปรเจกต์สร้างสรรค์และชุมชนของผม",
-            'about-oak-title': 'เกี่ยวกับ OAK',
-            'about-oak-details': "ผมเป็นผู้สร้างเนื้อหาที่เน้นไปที่การสร้างม็อดเกม, การสอน, และการสตรีมมิ่ง เว็บไซต์นี้คือศูนย์กลางอย่างเป็นทางการสำหรับผลงานทั้งหมดของผม ทำให้คุณสามารถเข้าถึงม็อดและสนับสนุนช่องได้อย่างง่ายดาย",
-            'mission-title': 'พันธกิจของเรา',
-            'mission-details': 'เพื่อมอบม็อดที่มีคุณภาพสูง สร้างสรรค์ และเนื้อหาด้านการศึกษาให้กับชุมชนเกม เรามุ่งมั่นที่จะยกระดับประสบการณ์ผู้เล่นและส่งเสริมสภาพแวดล้อมที่เป็นมิตรและให้การสนับสนุน',
-            'motivation-title': 'แรงจูงใจ',
-            'motivation-details': "ผมไม่ได้มีเป้าหมายจะดังระดับโลก แค่มีคนดูแล้วได้อะไรบางอย่างจากผม... นั่นแหละ คือพอแล้ว",
-            
             // Footer
             'footer-follow': 'ติดตามผลงานได้ที่',
-            'footer-copyright': 'สงวนลิขสิทธิ์ทั้งหมด © 2025 OAK',
+            'footer-copyright': 'สงวนลิขสิทธิ์ © 2025 OAK',
             'footer-madeby': 'สร้างโดย Taylor Brooks'
         }
     };
 
-    // 4. Localization Function
+    const toggleButton = document.querySelector('.toggle-button');
+    const sidebar = document.querySelector('.sidebar');
+    const langButtons = document.querySelectorAll('.lang-button');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.querySelector('body');
+    const activeSidebar = localStorage.getItem('sidebarActive') === 'true';
+
+    // Function to set the website language
     const setLanguage = (lang) => {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
+                if (element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'SPAN' || element.tagName === 'A') {
+                    element.innerHTML = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
+        document.documentElement.lang = lang;
         localStorage.setItem('language', lang);
-    };
-
-    // 5. Initial Load & Event Listeners
-    const body = document.body;
-    const langButtons = document.querySelectorAll('.lang-button');
-    const toggleButton = document.querySelector('.toggle-button');
-    const sidebar = document.querySelector('.sidebar');
-    const darkModeToggle = document.getElementById('darkModeToggle');
-
-    // Set initial language state from localStorage
-    const savedLang = localStorage.getItem('language') || 'th';
-    setLanguage(savedLang);
-    langButtons.forEach(button => {
-        if (button.getAttribute('data-lang') === savedLang) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
-    });
-
-    // Sidebar Toggle
-    if (toggleButton && sidebar) {
-        // Set initial sidebar state from localStorage
-        const isSidebarActive = localStorage.getItem('sidebarActive') === 'true';
-        if (isSidebarActive) {
+    }
+    
+    // Function to handle sidebar state
+    const setSidebarState = (isActive) => {
+        if (isActive) {
             sidebar.classList.add('active');
             toggleButton.classList.add('right');
+        } else {
+            sidebar.classList.remove('active');
+            toggleButton.classList.remove('right');
         }
+    }
 
+    // Set initial state from localStorage
+    const savedLang = localStorage.getItem('language') || 'th';
+    setLanguage(savedLang);
+    document.querySelector(`.lang-button[data-lang="${savedLang}"]`).classList.add('active');
+    
+    setSidebarState(activeSidebar);
+
+    // Event listeners
+    if (toggleButton && sidebar) {
         toggleButton.addEventListener('click', () => {
             const isActive = sidebar.classList.toggle('active');
             toggleButton.classList.toggle('right');
@@ -165,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Language Button Click
     if (langButtons.length > 0) {
         langButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -177,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dark Mode Toggle
     if (darkModeToggle && body) {
         darkModeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
@@ -192,63 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set initial dark mode state from localStorage
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        const icon = darkModeToggle.querySelector('ion-icon');
         if (isDarkMode) {
             body.classList.add('dark-mode');
-            if (icon) icon.setAttribute('name', 'sunny-outline');
-        } else {
-            if (icon) icon.setAttribute('name', 'moon-outline');
+            darkModeToggle.querySelector('ion-icon').setAttribute('name', 'sunny-outline');
         }
     }
-
-});
-
-// ** ส่วนนี้ต้องอยู่ภายใน document.addEventListener('DOMContentLoaded', ...) หรือคล้ายกัน **
-// ** ที่สำคัญ: URL และ Logic ของ API ด้านล่างนี้เป็นตัวอย่าง คุณต้องสร้าง API เอง **
-
-const API_ENDPOINT = 'https://your-backend-api.com/api/get-ga4-download-count'; // 👈 แก้ URL นี้ให้เป็น API จริงของคุณ
-
-/**
- * ดึงยอดดาวน์โหลดจาก API และแสดงผลบนเว็บไซต์
- * @param {string} eventLabel - ค่า event_label ที่ต้องการดึง (เช่น 'Thai_Font_1.21.8')
- * @param {string} elementId - ID ของ span element ที่จะแสดงผล (เช่น 'download-count-Thai_Font_1.21.8')
- */
-function fetchDownloadCount(eventLabel, elementId) {
-    const countElement = document.getElementById(elementId);
-
-    if (!countElement) return; // ออกจากฟังก์ชันถ้าไม่พบ Element
-
-    // โหลดข้อมูลจาก API
-    fetch(`${API_ENDPOINT}?label=${eventLabel}`)
-        .then(response => {
-            if (!response.ok) {
-                // หาก API มีปัญหา ให้แสดงข้อความผิดพลาด
-                throw new Error(`API response error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            // สมมติว่า API ตอบกลับมาในรูปแบบ: { "count": 1234 }
-            const downloadCount = parseInt(data.count, 10);
-            
-            // แสดงตัวเลขพร้อมใส่จุลภาค
-            countElement.textContent = downloadCount.toLocaleString('th-TH');
-        })
-        .catch(error => {
-            console.error(`Error fetching count for ${eventLabel}:`, error);
-            countElement.textContent = 'N/A';
-        });
-}
-
-
-// 🔑 เรียกใช้ฟังก์ชันสำหรับ Mod ทั้งหมดที่คุณต้องการแสดงผล
-document.addEventListener('DOMContentLoaded', function() {
-    // โค้ดเดิมอื่นๆ ของคุณ (toggle-button, dark mode ฯลฯ)
-
-    // เรียกใช้สำหรับการโหลดข้อมูลดาวน์โหลด
-    fetchDownloadCount('Thai_Font_1.21.8', 'download-count-Thai_Font_1.21.8');
-    
-    // หากมี Mod อื่น:
-    // fetchDownloadCount('Other_Mod_Name_1.0', 'download-count-Other_Mod_Name_1.0');
-    // fetchDownloadCount('Another_Mod_Name_2.5', 'download-count-Another_Mod_Name_2.5');
 });
