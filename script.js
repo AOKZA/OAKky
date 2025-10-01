@@ -200,4 +200,55 @@ document.addEventListener('DOMContentLoaded', () => {
             if (icon) icon.setAttribute('name', 'moon-outline');
         }
     }
+
+});
+
+// ** ส่วนนี้ต้องอยู่ภายใน document.addEventListener('DOMContentLoaded', ...) หรือคล้ายกัน **
+// ** ที่สำคัญ: URL และ Logic ของ API ด้านล่างนี้เป็นตัวอย่าง คุณต้องสร้าง API เอง **
+
+const API_ENDPOINT = 'https://your-backend-api.com/api/get-ga4-download-count'; // 👈 แก้ URL นี้ให้เป็น API จริงของคุณ
+
+/**
+ * ดึงยอดดาวน์โหลดจาก API และแสดงผลบนเว็บไซต์
+ * @param {string} eventLabel - ค่า event_label ที่ต้องการดึง (เช่น 'Thai_Font_1.21.8')
+ * @param {string} elementId - ID ของ span element ที่จะแสดงผล (เช่น 'download-count-Thai_Font_1.21.8')
+ */
+function fetchDownloadCount(eventLabel, elementId) {
+    const countElement = document.getElementById(elementId);
+
+    if (!countElement) return; // ออกจากฟังก์ชันถ้าไม่พบ Element
+
+    // โหลดข้อมูลจาก API
+    fetch(`${API_ENDPOINT}?label=${eventLabel}`)
+        .then(response => {
+            if (!response.ok) {
+                // หาก API มีปัญหา ให้แสดงข้อความผิดพลาด
+                throw new Error(`API response error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // สมมติว่า API ตอบกลับมาในรูปแบบ: { "count": 1234 }
+            const downloadCount = parseInt(data.count, 10);
+            
+            // แสดงตัวเลขพร้อมใส่จุลภาค
+            countElement.textContent = downloadCount.toLocaleString('th-TH');
+        })
+        .catch(error => {
+            console.error(`Error fetching count for ${eventLabel}:`, error);
+            countElement.textContent = 'N/A';
+        });
+}
+
+
+// 🔑 เรียกใช้ฟังก์ชันสำหรับ Mod ทั้งหมดที่คุณต้องการแสดงผล
+document.addEventListener('DOMContentLoaded', function() {
+    // โค้ดเดิมอื่นๆ ของคุณ (toggle-button, dark mode ฯลฯ)
+
+    // เรียกใช้สำหรับการโหลดข้อมูลดาวน์โหลด
+    fetchDownloadCount('Thai_Font_1.21.8', 'download-count-Thai_Font_1.21.8');
+    
+    // หากมี Mod อื่น:
+    // fetchDownloadCount('Other_Mod_Name_1.0', 'download-count-Other_Mod_Name_1.0');
+    // fetchDownloadCount('Another_Mod_Name_2.5', 'download-count-Another_Mod_Name_2.5');
 });
