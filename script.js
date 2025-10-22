@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'mods-title': 'MODS Download',
             'mods-description': 'Here you can find all my latest creations and mods. Explore the list and enhance your experience.',
             'mod-name-thai-font': 'Thai_Font',
-            'mod-description-thai-font': 'Version 1.21.8: Thai_Font is a MOD that changes the font in Minecraft!',
+            'mod-description-thai-font': 'Version 1.21.10: Thai_Font is a MOD that changes the font in Minecraft!',
             'mod-name-another': 'Another Awesome Mod',
             'mod-description-another': 'A new mod that adds cool features to the game. Check it out now!',
             'download-button': 'Download',
@@ -170,4 +170,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
 
