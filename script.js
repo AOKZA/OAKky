@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'mods-title': 'ดาวน์โหลด MODS',
             'mods-description': 'ที่นี่คุณสามารถดาวน์โหลด MODS ทั้งหมดที่ฉันสร้างขึ้นมาได้',
             'mod-name-thai-font': 'Thai_Font',
-            'mod-description-thai-font': 'เวอร์ชั่น 1.21.8: Thai_Font คือ MOD ที่เปลี่ยนฟอนต์ในเกม Minecraft!',
+            'mod-description-thai-font': 'เวอร์ชั่น 1.21.10: Thai_Font คือ MOD ที่เปลี่ยนฟอนต์ในเกม Minecraft!',
             'mod-name-another': 'MOD สุดเจ๋งอีกตัว',
             'mod-description-another': 'MOD ใหม่ที่เพิ่มฟีเจอร์เจ๋งๆ ให้กับเกม ลองดูเลย!',
             'download-button': 'ดาวน์โหลด',
@@ -170,3 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
