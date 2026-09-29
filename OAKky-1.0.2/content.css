@@ -1,0 +1,391 @@
+/* content.css - Apple Style Pages: MODS, About, Donate */
+
+/* Shared Content Header */
+.page-header {
+    width: 100%;
+    padding: 60px 24px 40px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 20%, var(--accent-light) 0%, transparent 70%);
+}
+
+.page-header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.page-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Page Section Container */
+.page-section {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+}
+
+/* ------------------------------------------- */
+/* --- 1. MODS Page Styles --- */
+/* ------------------------------------------- */
+.mod-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mod-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mod-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 113, 227, 0.3);
+}
+
+.mod-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+.mod-image-wrap {
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mod-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mod-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.mod-header-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.mod-meta h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.mod-tag-pill {
+    padding: 3px 10px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.mod-meta p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.mod-features-list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+}
+
+.mod-features-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--accent);
+}
+
+.mod-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px var(--accent-glow);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.mod-download-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* ------------------------------------------- */
+/* --- 2. About Page Styles --- */
+/* ------------------------------------------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 113, 227, 0.3);
+}
+
+.about-card.featured-bio {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-avatar-wrap {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0071e3, #57c4e5);
+    padding: 4px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.about-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg-secondary);
+}
+
+.about-bio-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.about-bio-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.about-card-icon {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    display: inline-block;
+}
+
+.about-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+/* ------------------------------------------- */
+/* --- 3. Donate Page Styles --- */
+/* ------------------------------------------- */
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.donate-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.donate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.donate-card.youtube-card:hover {
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
+.donate-card.tipme-card:hover {
+    border-color: rgba(87, 196, 229, 0.4);
+}
+
+.donate-icon-container {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.youtube-icon-bg {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.tipme-icon-bg {
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+}
+
+.donate-details h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.donate-details p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.donate-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.youtube-btn-bg {
+    background: #ff0000;
+    box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3);
+}
+
+.youtube-btn-bg:hover {
+    background: #e60000;
+    transform: scale(1.02);
+}
+
+.tipme-btn-bg {
+    background: #0096c7;
+    box-shadow: 0 4px 14px rgba(0, 150, 199, 0.3);
+}
+
+.tipme-btn-bg:hover {
+    background: #0077b6;
+    transform: scale(1.02);
+}
+
+/* Donate Thank You Note */
+.donate-thankyou-card {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.06), rgba(87, 196, 229, 0.06));
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+}
+
+.donate-thankyou-card p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent);
+}
