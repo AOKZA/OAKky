@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OAKZA AZ. | เว็บไซต์หลัก MODS และคลิป</title>
     <meta name="description" content="เว็บไซต์อย่างเป็นทางการของ OAKZA AZ. รวบรวมผลงาน MODS, คลิปวิดีโอ, และช่องทางติดตามทั้งหมด">
+
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="apple-touch-icon" href="img/icon.png">
     
-    <link rel="icon" type="image/png" href="img/icon.png" sizes="180x180">
-    <link rel="apple-touch-icon" href="/OAKky/icon.png" sizes="180x180">
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <!-- Apple Style CSS Design System -->
+    <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="antigravity.css">
+    <link rel="stylesheet" href="responsive.css"> 
     
-    <meta name="robots" content="max-snippet:-1, max-image-preview:none">
-    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFBT945VJ7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,150 +30,207 @@
       gtag('js', new Date());
       gtag('config', 'G-SFBT945VJ7');
     </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "OAKZA AZ.",
-      "url": "https://aokza.github.io/OAKky/",
-      "logo": "https://aokza.github.io/OAKky/icon.png", 
-      "sameAs": [
-        "https://www.facebook.com/oakza.az",
-        "https://www.youtube.com/@OAKZA_AZ."
-      ]
-    }
-    </script>
-
-    <link rel="stylesheet" href="base.css"> 
-    <link rel="stylesheet" href="layout.css"> 
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="responsive.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous"/>
-    
 </head>
-<body>
+<body class="dark-mode">
     
-    <div class="toggle-button" role="button" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
+    <!-- Apple Fixed Top Navigation Bar -->
+    <header class="apple-nav">
+        <div class="apple-nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-badge">⚡</span>
+                <span>OAKZA AZ.</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active" data-i18n="nav-home">หน้าหลัก</a></li>
+                    <li><a href="mods.html" class="nav-link" data-i18n="nav-mods">MODS</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav-about">เกี่ยวกับ</a></li>
+                    <li><a href="donate.html" class="nav-link" data-i18n="nav-donate">โดเนท</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Antigravity Physics Mode Trigger -->
+                <button class="antigravity-toggle-btn" title="Toggle Antigravity Physics">
+                    <span class="icon">🪐</span>
+                    <span data-i18n="nav-antigravity">Antigravity</span>
+                </button>
+
+                <!-- Apple Dark / Light Mode Switcher -->
+                <button class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <!-- Apple Segmented Language Switcher (TH / EN) -->
+                <div class="apple-lang-segmented" title="Language Switcher">
+                    <button class="lang-segment-btn active" data-lang="th">TH</button>
+                    <button class="lang-segment-btn" data-lang="en">EN</button>
+                </div>
+
+                <!-- Mobile Menu Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer">
+        <ul class="mobile-drawer-links">
+            <li><a href="index.html" class="nav-link active" data-i18n="nav-home">หน้าหลัก</a></li>
+            <li><a href="mods.html" class="nav-link" data-i18n="nav-mods">MODS</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav-about">เกี่ยวกับ</a></li>
+            <li><a href="donate.html" class="nav-link" data-i18n="nav-donate">โดเนท</a></li>
+        </ul>
+        <div class="mobile-drawer-actions">
+            <button class="antigravity-toggle-btn" style="width: 100%; justify-content: center;">
+                <span class="icon">🪐</span>
+                <span data-i18n="nav-antigravity">Antigravity</span>
+            </button>
+        </div>
     </div>
 
-    <aside class="sidebar" aria-label="Main Navigation">
-        <div class="profile">
-            <a href="#" class="profile-link">
-                <div class="profile-info">
-                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-                </div>
-                <span>Analytics</span>
-            </a>
-        </div>
-
-        <ul class="nav-list" role="menu">
-            <li role="menuitem"><a href="index.html" aria-current="page"><ion-icon name="home-outline" aria-hidden="true"></ion-icon><p data-i18n="nav-home">Home</p></a></li>
-            <li role="menuitem"><a href="mods.html"><ion-icon name="apps-outline" aria-hidden="true"></ion-icon><p data-i18n="nav-mods">MODS</p></a></li>
-            <li role="menuitem"><a href="about.html"><ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon><p data-i18n="nav-about">About</p></a></li>
-            <li role="menuitem"><a href="donate.html"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon><p data-i18n="nav-donate">Donate</p></a></li>
-            <div class="divider" role="separator"></div>
-            <li role="menuitem"><a href="#"><ion-icon name="settings-outline" aria-hidden="true"></ion-icon><p data-i18n="custom-heading">Custom</p></a></li>
-        </ul>
-
-        <div class="bottom-list">
-            <div class="switch-theme" id="darkModeToggle" role="switch" aria-checked="false" tabindex="0">
-                <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
-                <p data-i18n="dark-mode">Dark Mode</p>
-            </div>
-            <div class="language-switcher">
-                <p data-i18n="language-label">Language</p>
-                <button class="lang-button active" data-lang="th" aria-pressed="true">TH</button>
-                <button class="lang-button" data-lang="en" aria-pressed="false">EN</button>
-            </div>
-            <div class="logout">
-                <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
-                <p data-i18n="logout">Logout</p>
-            </div>
-        </div>
-    </aside>
-    
+    <!-- Main Content Container -->
     <div class="container">
-        <header class="youtube-hero">
+        <!-- Hero Section -->
+        <section class="youtube-hero">
             <div class="hero-content">
-                <h1 class="hero-title" data-i18n="home-hero-title">Welcome to the OAKZA AZ. website.</h1>
-                <p class="hero-subtitle" data-i18n="home-hero-subtitle">Collect works and channels to follow various clips. You can explore clips at.</p>
+                <div class="hero-badge-pill physics-item" data-i18n="home-hero-badge">
+                    ✨ เว็บไซต์อย่างเป็นทางการ OAKZA AZ.
+                </div>
+                <h1 class="hero-title physics-item" data-i18n="home-hero-title">
+                    สร้างสรรค์ผลงาน MODS & คอนเทนต์ระดับพรีเมียม
+                </h1>
+                <p class="hero-subtitle physics-item" data-i18n="home-hero-subtitle">
+                    ศูนย์รวมผลงาน Minecraft MODS, คลิปวิดีโอสร้างสรรค์, และเทคโนโลยีที่คัดสรรด้วยความมุ่งมั่นและความประณีต
+                </p>
                 <div class="hero-buttons">
-                    <a href="#featured-content" class="hero-button primary">Explore Now</a>
-                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" class="hero-button secondary" rel="noopener noreferrer">Watch on YouTube</a>
+                    <a href="#featured-content" class="apple-btn primary physics-item" data-i18n="home-cta-explore">สำรวจผลงาน</a>
+                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" class="apple-btn secondary physics-item" data-i18n="home-cta-youtube">ดูบน YouTube</a>
                 </div>
             </div>
-            <div class="video-display">
-                <iframe 
-                    src="https://www.youtube.com/embed/R8Jveljae8g?autoplay=1&mute=1&loop=1&playlist=R8Jveljae8g&controls=0&modestbranding=1" 
-                    title="Featured YouTube Video for OAKZA AZ." 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </header>
 
+            <!-- Apple Studio Display Frame for Video -->
+            <div class="video-display-container physics-item">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/R8Jveljae8g?autoplay=1&mute=1&loop=1&playlist=R8Jveljae8g&controls=0&modestbranding=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Antigravity Teaser Banner -->
+        <section class="antigravity-banner">
+            <div class="antigravity-banner-card physics-item">
+                <div class="antigravity-banner-content">
+                    <span class="eyebrow" data-i18n="home-antigravity-badge">🪐 ฟีเจอร์พิเศษ Antigravity</span>
+                    <h3 data-i18n="home-antigravity-title">ลองสัมผัสประสบการณ์ Antigravity</h3>
+                    <p data-i18n="home-antigravity-desc">คลิกปุ่มเพื่อปลดปล่อยวัตถุบนหน้าเว็บให้ลอย เด้ง กระดอน และสามารถใช้เมาส์จับลากโยนได้อิสระตามแรงโน้มถ่วง!</p>
+                </div>
+                <button class="apple-btn antigravity-hero-btn launch-antigravity-btn">
+                    <span class="icon">🪐</span>
+                    <span data-i18n="home-antigravity-btn">เปิดโหมด Antigravity</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Creations Bento Grid -->
         <main class="main-content">
             <section class="featured-section" id="featured-content">
                 <div class="section-header">
-                    <h2 data-i18n="featured-title">Featured Creations</h2>
-                    <p data-i18n="featured-subtitle">A glimpse into my latest projects, crafted with passion and precision.</p>
+                    <h2 class="physics-item" data-i18n="featured-title">ผลงานเด่น</h2>
+                    <p class="physics-item" data-i18n="featured-subtitle">คัดสรรโปรเจกต์ล่าสุดที่ออกแบบด้วยความตั้งใจเพื่อทุกคน</p>
                 </div>
 
                 <div class="card-group">
-                    <div class="card">
-                        <img src="img/MODS.png" alt="OAKZA AZ. MODS Download Page Image">
+                    <!-- Bento Card 1: MODS -->
+                    <div class="card physics-item">
+                        <div class="card-img-wrap">
+                            <img src="img/MODS.png" alt="Minecraft MODS">
+                        </div>
                         <div class="card-info">
-                            <h3 data-i18n="project-one-title">MODS Download</h3>
-                            <p data-i18n="project-one-desc">You can download it here.</p>
-                            <a href="mods.html" class="explore-button" data-i18n="explore-button">Explore</a>
+                            <div class="card-info-top">
+                                <span class="card-tag" data-i18n="project-one-tag">MINECRAFT MOD</span>
+                                <h3 data-i18n="project-one-title">MODS Download</h3>
+                                <p data-i18n="project-one-desc">ดาวน์โหลดม็อดเกมคุณภาพสูง เช่น Thai_Font รองรับภาษาไทย 100%</p>
+                            </div>
+                            <a href="mods.html" class="card-explore-btn">
+                                <span data-i18n="explore-button">สำรวจเพิ่มเติม</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <img src="img/Facebook.png" alt="OAKZA AZ. Facebook Page Image">
+                    <!-- Bento Card 2: Facebook -->
+                    <div class="card physics-item">
+                        <div class="card-img-wrap">
+                            <img src="img/Facebook.png" alt="Facebook Community">
+                        </div>
                         <div class="card-info">
-                            <h3 data-i18n="project-two-title">Facebook Page</h3>
-                            <p data-i18n="project-two-desc">Showcasing the seamless fusion of art and technology.</p>
-                            <a href="https://www.facebook.com/oakza.az" class="explore-button" data-i18n="explore-button" target="_blank" rel="noopener noreferrer">Explore</a>
+                            <div class="card-info-top">
+                                <span class="card-tag" data-i18n="project-two-tag">COMMUNITY</span>
+                                <h3 data-i18n="project-two-title">Facebook Page</h3>
+                                <p data-i18n="project-two-desc">ติดตามอัปเดตข่าวสาร ข้อมูลใหม่ๆ และพูดคุยแลกเปลี่ยนความคิดเห็นกับเรา</p>
+                            </div>
+                            <a href="https://www.facebook.com/oakza.az" target="_blank" class="card-explore-btn">
+                                <span data-i18n="explore-button">สำรวจเพิ่มเติม</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <img src="img/You-tube.png" alt="OAKZA AZ. YouTube Channel Image">
+
+                    <!-- Bento Card 3: YouTube -->
+                    <div class="card physics-item">
+                        <div class="card-img-wrap">
+                            <img src="img/You-tube.png" alt="YouTube Channel">
+                        </div>
                         <div class="card-info">
-                            <h3 data-i18n="project-three-title">YouTube Channel</h3>
-                            <p data-i18n="project-three-desc">Innovating with new concepts and breathtaking visuals.</p>
-                            <a href="https://www.youtube.com/@OAKZA_AZ." class="explore-button" data-i18n="explore-button" target="_blank" rel="noopener noreferrer">Explore</a>
+                            <div class="card-info-top">
+                                <span class="card-tag" data-i18n="project-three-tag">YOUTUBE CHANNEL</span>
+                                <h3 data-i18n="project-three-title">YouTube Content</h3>
+                                <p data-i18n="project-three-desc">รับชมวิดีโอสร้างสรรค์ คลิปสอนทำม็อด และสาระความสนุกมากมาย</p>
+                            </div>
+                            <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" class="card-explore-btn">
+                                <span data-i18n="explore-button">สำรวจเพิ่มเติม</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
+        <!-- Apple Minimal Footer -->
         <footer class="main-footer">
-            <div class="footer-section">
-                <div class="footer-text">
-                    <p data-i18n="footer-follow">Follow the work at.</p>
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h4>OAKZA AZ.</h4>
+                        <p data-i18n="footer-brand-desc">ผลงานสร้างสรรค์ ม็อดเกม และคอนเทนต์คุณภาพ</p>
+                    </div>
+                    <div class="footer-social">
+                        <span style="font-size: 0.88rem; color: var(--text-secondary);" data-i18n="footer-follow">ติดตามผลงาน:</span>
+                        <a href="https://www.facebook.com/oakza.az" target="_blank" class="social-pill" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" class="social-pill" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/oakza.az" target="_blank" aria-label="Follow on Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" aria-label="Follow on YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <div class="footer-bottom">
+                    <p data-i18n="footer-copyright">สงวนลิขสิทธิ์ © 2026 OAKZA AZ. All rights reserved.</p>
+                    <p data-i18n="footer-madeby">ออกแบบด้วย Apple Minimalist Style & Antigravity Physics</p>
                 </div>
-            </div>
-            <hr class="footer-divider">
-            <div class="copyright-section">
-                <p data-i18n="footer-copyright">All rights reserved © 2025 OAK</p>
-                <p data-i18n="footer-madeby">Made by Taylor Brooks</p>
             </div>
         </footer>
     </div>
     
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Matter.js Physics Engine & Main Script -->
+    <script src="matter.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
