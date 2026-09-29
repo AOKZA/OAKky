@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAKZA AZ. | ร่วมสนับสนุน Donate</title>
+    <meta name="description" content="สนับสนุน OAKZA AZ. ผ่าน YouTube Membership หรือ TipMe เพื่อช่วยให้เราสร้างสรรค์ผลงานต่อไปได้">
+
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="apple-touch-icon" href="img/icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="antigravity.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFBT945VJ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SFBT945VJ7');
+    </script>
+
+    <style>
+        /* Donate page specific styles */
+        .donate-page-main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        /* Hero Impact Stats Strip */
+        .donate-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .donate-stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .donate-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .donate-stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 6px;
+            letter-spacing: -0.03em;
+        }
+
+        .donate-stat-label {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* Donate Cards Grid */
+        .donate-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .donate-option-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .donate-option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .donate-option-card.youtube-card:hover {
+            border-color: rgba(255, 0, 0, 0.35);
+        }
+
+        .donate-option-card.tipme-card:hover {
+            border-color: rgba(0, 150, 199, 0.4);
+        }
+
+        .donate-option-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .donate-icon-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .yt-icon-bg { background: linear-gradient(135deg, #ff0000, #cc0000); }
+        .tipme-icon-bg { background: linear-gradient(135deg, #00b4d8, #0077b6); }
+
+        .donate-option-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .donate-option-desc {
+            font-size: 0.97rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            flex-grow: 1;
+            margin-bottom: 28px;
+        }
+
+        /* Perks list */
+        .donate-perks-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .donate-perks-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .perk-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .yt-perk-check { background: rgba(255, 0, 0, 0.1); color: #ff0000; }
+        .tipme-perk-check { background: rgba(0, 150, 199, 0.12); color: #0096c7; }
+
+        /* CTA Buttons */
+        .donate-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.97rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            width: 100%;
+            letter-spacing: 0.01em;
+        }
+
+        .yt-cta-btn {
+            background: #ff0000;
+            box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
+        }
+
+        .yt-cta-btn:hover {
+            background: #d90000;
+            transform: scale(1.02);
+            box-shadow: 0 6px 22px rgba(255, 0, 0, 0.4);
+        }
+
+        .tipme-cta-btn {
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            box-shadow: 0 4px 16px rgba(0, 119, 182, 0.35);
+        }
+
+        .tipme-cta-btn:hover {
+            background: linear-gradient(135deg, #0096c7, #005f94);
+            transform: scale(1.02);
+            box-shadow: 0 6px 22px rgba(0, 119, 182, 0.45);
+        }
+
+        /* Thank You Card */
+        .donate-thankyou-card {
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.07), rgba(87, 196, 229, 0.07));
+            border: 1px solid rgba(0, 113, 227, 0.18);
+            border-radius: var(--radius-lg);
+            padding: 36px 40px;
+            text-align: center;
+        }
+
+        .donate-thankyou-card .thank-emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .donate-thankyou-card p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.55;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .donate-stats-strip {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto 40px;
+            }
+
+            .donate-cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto 40px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Apple Fixed Top Navigation Bar -->
+    <header class="apple-nav">
+        <div class="apple-nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-badge">⚡</span>
+                <span>OAKZA AZ.</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav-home">หน้าหลัก</a></li>
+                    <li><a href="mods.html" class="nav-link" data-i18n="nav-mods">MODS</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav-about">เกี่ยวกับ</a></li>
+                    <li><a href="donate.html" class="nav-link active" data-i18n="nav-donate">โดเนท</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="antigravity-toggle-btn" title="Toggle Antigravity Physics">
+                    <span class="icon">🪐</span>
+                    <span data-i18n="nav-antigravity">Antigravity</span>
+                </button>
+                <button class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="apple-lang-segmented">
+                    <button class="lang-segment-btn active" data-lang="th">TH</button>
+                    <button class="lang-segment-btn" data-lang="en">EN</button>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+        <ul class="mobile-drawer-links">
+            <li><a href="index.html" class="nav-link" data-i18n="nav-home">หน้าหลัก</a></li>
+            <li><a href="mods.html" class="nav-link" data-i18n="nav-mods">MODS</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav-about">เกี่ยวกับ</a></li>
+            <li><a href="donate.html" class="nav-link active" data-i18n="nav-donate">โดเนท</a></li>
+        </ul>
+        <div class="mobile-drawer-actions">
+            <button class="antigravity-toggle-btn" style="width: 100%; justify-content: center;">
+                <span class="icon">🪐</span>
+                <span data-i18n="nav-antigravity">Antigravity</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-inner">
+                    <div class="page-badge physics-item" data-i18n="donate-page-badge">❤️ สนับสนุนครีเอเตอร์</div>
+                    <h1 class="page-title physics-item" data-i18n="donate-page-title">ร่วมสนับสนุน OAKZA AZ.</h1>
+                    <p class="page-subtitle physics-item" data-i18n="donate-page-subtitle">ทุกการสนับสนุนของคุณคือกำลังใจอันยิ่งใหญ่ ที่ช่วยให้ผมสามารถพัฒนา MODS, สร้างสรรค์คอนเทนต์ และดูแลโปรเจกต์ต่อไปได้ครับ</p>
+                </div>
+            </div>
+
+            <div class="donate-page-main">
+
+                <!-- Quick Stats Strip -->
+                <div class="donate-stats-strip">
+                    <div class="donate-stat-card physics-item">
+                        <span class="donate-stat-number">1+</span>
+                        <span class="donate-stat-label">Minecraft MOD Released</span>
+                    </div>
+                    <div class="donate-stat-card physics-item">
+                        <span class="donate-stat-number">100%</span>
+                        <span class="donate-stat-label">Thai Language Support</span>
+                    </div>
+                    <div class="donate-stat-card physics-item">
+                        <span class="donate-stat-number">Free</span>
+                        <span class="donate-stat-label">All MODS — Always Free</span>
+                    </div>
+                </div>
+
+                <!-- Donation Method Cards -->
+                <div class="donate-cards-grid">
+
+                    <!-- YouTube Membership Card -->
+                    <div class="donate-option-card youtube-card physics-item">
+                        <div class="donate-option-top">
+                            <div class="donate-icon-badge yt-icon-bg">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <div class="donate-option-name" data-i18n="donate-yt-title">YouTube Membership</div>
+                        </div>
+
+                        <p class="donate-option-desc" data-i18n="donate-yt-desc">สมัครสมาชิกช่อง YouTube เพื่อรับตราสัญลักษณ์สุดพิเศษ อิโมจิเฉพาะตัว และสนับสนุนการผลิตคลิปโดยตรง</p>
+
+                        <ul class="donate-perks-list">
+                            <li>
+                                <span class="perk-check yt-perk-check"><i class="fas fa-check"></i></span>
+                                ตราสมาชิกพิเศษข้าง Username
+                            </li>
+                            <li>
+                                <span class="perk-check yt-perk-check"><i class="fas fa-check"></i></span>
+                                อิโมจิ Custom สำหรับสมาชิก
+                            </li>
+                            <li>
+                                <span class="perk-check yt-perk-check"><i class="fas fa-check"></i></span>
+                                รายได้ตรงถึงมือครีเอเตอร์ 100%
+                            </li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/channel/UC-kXsjkm685oq0xUiGnlh4Q/join"
+                           target="_blank"
+                           class="donate-cta-btn yt-cta-btn"
+                           onclick="gtag('event', 'donate_click', { event_category: 'donate', event_label: 'youtube_membership' });">
+                            <i class="fab fa-youtube"></i>
+                            <span data-i18n="donate-yt-btn">สมัครสมาชิกช่อง</span>
+                        </a>
+                    </div>
+
+                    <!-- TipMe Card -->
+                    <div class="donate-option-card tipme-card physics-item">
+                        <div class="donate-option-top">
+                            <div class="donate-icon-badge tipme-icon-bg">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div class="donate-option-name" data-i18n="donate-tipme-title">TipMe (โดเนทโดยตรง)</div>
+                        </div>
+
+                        <p class="donate-option-desc" data-i18n="donate-tipme-desc">ส่งข้อความและเงินสนับสนุนขึ้นจอสตรีมได้ง่ายๆ ผ่านระบบ TipMe รองรับ PromptPay และ TrueMoney Wallet</p>
+
+                        <ul class="donate-perks-list">
+                            <li>
+                                <span class="perk-check tipme-perk-check"><i class="fas fa-check"></i></span>
+                                ข้อความขึ้นจอสตรีมทันที
+                            </li>
+                            <li>
+                                <span class="perk-check tipme-perk-check"><i class="fas fa-check"></i></span>
+                                รองรับ PromptPay & TrueMoney
+                            </li>
+                            <li>
+                                <span class="perk-check tipme-perk-check"><i class="fas fa-check"></i></span>
+                                ส่งได้ทุกจำนวน ไม่มีขั้นต่ำ
+                            </li>
+                        </ul>
+
+                        <a href="https://tipme.in.th/oakza-az"
+                           target="_blank"
+                           class="donate-cta-btn tipme-cta-btn"
+                           onclick="gtag('event', 'donate_click', { event_category: 'donate', event_label: 'tipme' });">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="donate-tipme-btn">ส่งโดเนทผ่าน TipMe</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Thank You Card -->
+                <div class="donate-thankyou-card physics-item">
+                    <span class="thank-emoji">🙏</span>
+                    <p data-i18n="donate-thankyou-msg">ขอบคุณจากใจจริงสำหรับทุกแรงสนับสนุนและความเอื้อเฟื้อครับ! 🙏✨</p>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Apple Minimal Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h4>OAKZA AZ.</h4>
+                        <p data-i18n="footer-brand-desc">ผลงานสร้างสรรค์ ม็อดเกม และคอนเทนต์คุณภาพ</p>
+                    </div>
+                    <div class="footer-social">
+                        <span style="font-size: 0.88rem; color: var(--text-secondary);" data-i18n="footer-follow">ติดตามผลงาน:</span>
+                        <a href="https://www.facebook.com/oakza.az" target="_blank" class="social-pill">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.youtube.com/@OAKZA_AZ." target="_blank" class="social-pill">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p data-i18n="footer-copyright">สงวนลิขสิทธิ์ © 2026 OAKZA AZ. All rights reserved.</p>
+                    <p data-i18n="footer-madeby">ออกแบบด้วย Apple Minimalist Style & Antigravity Physics</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="matter.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
